@@ -62,7 +62,7 @@ We selected Azure Devops because it has all the key fundamentals that are requir
 
 ### Planning
 
-![Planning](documentation/board.PNG)
+![Planning](documentation/board.png)
 The project used Dev Ops tools and techniques, and as such used a Kanban board, with Epics and Issues that were assigned to the various team members to track progress and maintain order for the project.
 The chosen Kanban board tech for this project was Azure Dev Ops' Boards, this choice was made to ensure that everything related to the project was accessible in one place.
 ### CI/CD Pipeline
@@ -70,7 +70,7 @@ The chosen Kanban board tech for this project was Azure Dev Ops' Boards, this ch
 
 The image above represents our CI/CD pipeline, it is a breakdown of how each service and the tools we have chosen work together. The image illustrates what we feel is one of the most efficient ways to deploy the app.  
 
-![Pipeline](documentation/Pipeline1.JPG)
+![Pipeline](documentation/Pipeline1.jpg)
 
 The image above gives a detailed overview on how the Azure pipeline functions for the build and deployment stage of the application. In short, once the pipeline is triggered it will create an AKS cluster
 via terraform plugins (if it doesn't already exist).
@@ -89,7 +89,7 @@ Once a user has entered new details into the front-end, such as a new vet, they 
 
 
 
-![Dev-environment](documentation/MicrosoftTeams-image.PNG)
+![Dev-environment](documentation/MicrosoftTeams-image.png)
 
 This image above illustrates how we used a manager vm to configure a dev-environment. For the application to be safely deployed and environmental drift to be minimised it is reccomended to use a development environment.
 The development environment we used relies on a terraform script to create a manager vm, which is used to run an ansible playbook on a number of other VMs that installs all project dependencies, meaning that all the developer has to do is set-up their credentials and clone down the repository. The other VM's were set up manually but can be setup with Terraform
