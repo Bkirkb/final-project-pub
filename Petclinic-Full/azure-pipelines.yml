@@ -53,14 +53,14 @@ stages:
         inputs:
           command: 'plan'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
-          environmentServiceName: 'Free Trial(11)(17f851e4-a297-478b-8b1b-49033c27e889)'
+          environmentServiceName: REDACTED
           allowTelemetryCollection: true
 
       - task: TerraformCLI@0
         inputs:
           command: 'apply'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
-          environmentServiceName: 'Free Trial(11)(17f851e4-a297-478b-8b1b-49033c27e889)'
+          environmentServiceName: 'REDACTED'
           commandOptions: '-auto-approve'
           allowTelemetryCollection: true
 
@@ -107,8 +107,8 @@ stages:
         displayName: Build images with docker compose
         inputs:
           containerregistrytype: 'Azure Container Registry'
-          azureSubscription: 'Free Trial (17f851e4-a297-478b-8b1b-49033c27e889)'
-          azureContainerRegistry: '{"loginServer":"plzwork.azurecr.io", "id" : "/subscriptions/17f851e4-a297-478b-8b1b-49033c27e889/resourceGroups/k8group/providers/Microsoft.ContainerRegistry/registries/plzwork"}'
+          azureSubscription: REDACTED
+          azureContainerRegistry: '{"loginServer":"plzwork.azurecr.io", "id" : "REDACTED/resourceGroups/k8group/providers/Microsoft.ContainerRegistry/registries/plzwork"}'
           dockerComposeFile: '**/docker-compose.yml'
           action: 'Build services'
           includeLatestTag: true
@@ -117,8 +117,8 @@ stages:
         displayName: Push images with docker compose
         inputs:
           containerregistrytype: 'Azure Container Registry'
-          azureSubscription: 'Free Trial (17f851e4-a297-478b-8b1b-49033c27e889)'
-          azureContainerRegistry: '{"loginServer":"plzwork.azurecr.io", "id" : "/subscriptions/17f851e4-a297-478b-8b1b-49033c27e889/resourceGroups/k8group/providers/Microsoft.ContainerRegistry/registries/plzwork"}'
+          azureSubscription: REDACTED
+          azureContainerRegistry: '{"loginServer":"plzwork.azurecr.io", "id" : "REDACTED/resourceGroups/k8group/providers/Microsoft.ContainerRegistry/registries/plzwork"}'
           dockerComposeFile: '**/docker-compose.yml'
           action: 'Push services'
           includeLatestTag: true
@@ -157,7 +157,7 @@ stages:
               arguments: '-f $(Pipeline.Workspace)/manifests/backend.yml'
               secretType: 'dockerRegistry'
               containerRegistryType: 'Azure Container Registry'
-              azureSubscriptionEndpointForSecrets: 'Free Trial(11)(17f851e4-a297-478b-8b1b-49033c27e889)'
+              azureSubscriptionEndpointForSecrets: 'REDACTED'
               azureContainerRegistry: 'plzwork.azurecr.io'
               secretName: '$(imagePullSecret)'
           
@@ -171,7 +171,7 @@ stages:
               arguments: '-f $(Pipeline.Workspace)/manifests/frontend.yml'
               secretType: 'dockerRegistry'
               containerRegistryType: 'Azure Container Registry'
-              azureSubscriptionEndpointForSecrets: 'Free Trial(11)(17f851e4-a297-478b-8b1b-49033c27e889)'
+              azureSubscriptionEndpointForSecrets: 'REDACTED'
               azureContainerRegistry: 'plzwork.azurecr.io'
               secretName: '$(imagePullSecret)'
           - task: Kubernetes@1
